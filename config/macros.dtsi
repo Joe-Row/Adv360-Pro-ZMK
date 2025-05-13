@@ -222,3 +222,116 @@
     bindings = <&mkp MB1 &mkp MB1>;
     display-name = "Double Click";
   };
+
+#define MOD_LSFT 0x02
+#define MOD_RSFT 0x20
+#define LBRACE (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET_AND_LEFT_BRACE)))
+#define RBRACE (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHT_BRACKET_AND_RIGHT_BRACE)))
+#define LPAR (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_9_AND_LEFT_PARENTHESIS)))
+#define RPAR (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_0_AND_RIGHT_PARENTHESIS)))
+#define AMPS (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_7_AND_AMPERSAND)))
+#define LBKT (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET_AND_LEFT_BRACE))
+#define RBKT (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHT_BRACKET_AND_RIGHT_BRACE))
+#define PLUS (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_EQUAL_AND_PLUS)))
+#define EQUAL (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_EQUAL_AND_PLUS))
+#define AT (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_2_AND_AT)))
+#define DOLLAR (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_4_AND_DOLLAR)))
+#define POUND (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_3_AND_HASH)))
+#define ASTERISK (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_8_AND_ASTERISK)))
+#define CARET (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_6_AND_CARET)))
+#define PERCENT (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_5_AND_PERCENT)))
+
+/* ─── Symbol / Number mod-morphs ───────────────────────────────────────────── */
+
+/* Top-row: Base → symbol, Shift → number */
+modmorph_plus: modmorph_plus {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    mods = <(MOD_LSFT | MOD_RSFT)>;
+    bindings = <&kp PLUS &kp PERCENT>;
+};
+
+modmorph_exclaim: modmorph_exclaim {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    mods = <(MOD_LSFT | MOD_RSFT)>;
+    bindings = <&kp LS(N1) &kp N1>;
+};
+
+modmorph_lbkt: modmorph_lbkt {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    mods = <(MOD_LSFT | MOD_RSFT)>;
+    bindings = <&kp LBKT &kp N2>;
+};
+
+modmorph_lcurl: modmorph_lcurl {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    mods = <(MOD_LSFT | MOD_RSFT)>;
+    bindings = <&kp LBRACE &kp N3>;
+};
+
+modmorph_lparen: modmorph_lparen {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    mods = <(MOD_LSFT | MOD_RSFT)>;
+    bindings = <&kp LPAR &kp N4>;
+};
+
+modmorph_ampersand: modmorph_ampersand {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    mods = <(MOD_LSFT | MOD_RSFT)>;
+    bindings = <&kp AMPS &kp N5>;
+};
+
+modmorph_equal: modmorph_equal {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    mods = <(MOD_LSFT | MOD_RSFT)>;
+    bindings = <&kp EQUAL &kp N6>;
+};
+
+modmorph_rparen: modmorph_rparen {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    mods = <(MOD_LSFT | MOD_RSFT)>;
+    bindings = <&kp RPAR &kp N7>;
+};
+
+modmorph_rcurl: modmorph_rcurl {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    mods = <(MOD_LSFT | MOD_RSFT)>;
+    bindings = <&kp RBRACE &kp N8>;
+};
+
+modmorph_rbkt: modmorph_rbkt {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    mods = <(MOD_LSFT | MOD_RSFT)>;
+    bindings = <&kp RBKT &kp N9>;
+};
+
+modmorph_at: modmorph_at {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    mods = <(MOD_LSFT | MOD_RSFT)>;
+    bindings = <&kp AT &kp N0>;
+};
+
+/* Bottom-row: Base → $,#  Shift → *,^ */
+modmorph_dollar: modmorph_dollar {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    mods = <(MOD_LSFT | MOD_RSFT)>;
+    bindings = <&kp DOLLAR &kp ASTERISK>;
+};
+
+modmorph_hash: modmorph_hash {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    mods = <(MOD_LSFT | MOD_RSFT)>;
+    bindings = <&kp POUND &kp CARET>;
+};

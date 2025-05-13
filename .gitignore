@@ -1,1 +1,9 @@
 /firmware/*.uf2
+.west/
+modules/
+zephyr/
+zmk-venv/
+zmk/
+backup/
+*.bak
+build/
