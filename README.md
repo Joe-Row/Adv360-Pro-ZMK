@@ -70,28 +70,29 @@ Creating the docker container takes some time. Therefore `make clean_firmware` c
 
 ## Flashing firmware
 
-Local builds land in `firmware/` as `*-left-clique.uf2` and `*-right-clique.uf2`. Flash left, then right.
+Follow the programming instruction on page 8 of the [Quick Start Guide](https://kinesis-ergo.com/wp-content/uploads/Advantage360-Professional-QSG-v8-25-22.pdf) to flash the firmware.
 
-### Keys
+Local builds land in `firmware/` as `*-left-clique.uf2` and `*-right-clique.uf2`. GitHub Actions builds use the same left/right pair. Flash left, then right.
 
-Hold the key labeled **Mod**. The other key is the one immediately below Mod on that inner column, or the matching inner key on the left, immediately below Keypad.
+Mod+macro1 and Mod+macro3 are: hold the key labeled **Mod**, then tap the inner key immediately below it. On the left that is the inner key below Keypad. On the right that is the inner key below Mod.
 
-- Left: hold Mod, tap the inner key below Keypad.
-- Right: hold Mod, tap the inner key below Mod.
+### Overview
 
-If those combos do nothing, each half has a physical reset in the thumb cluster where three keys meet. With that half on USB, double-click it with a paperclip. A single click just power-cycles. See section 2.7 and 5.9 of the [User Manual](https://kinesis-ergo.com/wp-content/uploads/Advantage360-ZMK-KB360-PRO-Users-Manual-v3-10-23.pdf).
+1. Extract the firmwares from the archive downloaded from the GitHub build job (If using the cloud builder) or the firmware folder (If building locally).
+1. Connect the left side keyboard to USB.
+1. Press Mod+macro1 to put the left side into bootloader mode; it should attach to your computer as a USB drive.
+1. Copy `left.uf2` to the USB drive and it will disconnect.
+1. Power off both keyboards (by unplugging them and making sure the switches are off).
+1. Turn on the left side keyboard with the switch.
+1. Connect the right side keyboard to USB to power it on.
+1. Press Mod+macro3 to put the right side into bootloader mode to attach it as a USB drive.
+1. Copy `right.uf2` to the mounted drive.
+1. Unplug the right side keyboard and turn it back on.
+1. Enjoy!
 
-### Steps
+> Note: There are also physical reset buttons on both keyboards which can be used to enter and exit the bootloader mode. Their location is described in section 2.7 on page 9 in the [User Manual](https://kinesis-ergo.com/wp-content/uploads/Advantage360-ZMK-KB360-PRO-Users-Manual-v3-10-23.pdf) and use is described in section 5.9 on page 14.
 
-1. Plug the left module into the PC over USB. Leave the right unplugged.
-2. Hold Mod, tap the left inner key below Keypad. A USB drive appears and the keyboard stops typing.
-3. Copy the `*-left-clique.uf2` file onto that drive. It ejects by itself. Windows may show a copy error anyway. That is fine.
-4. Unplug both modules and flip both battery switches off.
-5. Flip the left switch on.
-6. Plug the right module into USB.
-7. Hold Mod, tap the key immediately below Mod. Another USB drive appears.
-8. Copy the `*-right-clique.uf2` file onto that drive.
-9. Unplug the right module and switch it on.
+> Note: Some operating systems wont always treat the drive as ejected after the settings-reset file is flashed or may throw a spurious error, this doesn't mean that the flashing process has failed.
 
 ### Upgrading from V2 to V3
 
