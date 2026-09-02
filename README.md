@@ -74,6 +74,11 @@ Follow the programming instruction on page 8 of the [Quick Start Guide](https://
 
 Local builds land in `firmware/` as `*-left-clique.uf2` and `*-right-clique.uf2`. GitHub Actions builds use the same left/right pair. Flash left, then right.
 
+Two flash sets are kept in the repo so you can switch layouts:
+
+- `firmware/Numbers Top/` tap 1-0, Shift for the custom symbols
+- `firmware/Symbols Top/` tap the custom symbols, Shift for 1-0
+
 Those combos use three different keys:
 
 - **Mod** is the key labeled Mod, inner-top on the right, next to 6.
