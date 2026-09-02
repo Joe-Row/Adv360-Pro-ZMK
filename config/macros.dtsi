@@ -243,7 +243,8 @@
 
 /* ─── Symbol / Number mod-morphs ───────────────────────────────────────────── */
 
-/* Top-row: Base → symbol, Shift → number */
+/* Top-row: Base → number, Shift → the same custom symbols as before.
+   +/% and Minus are unchanged. */
 modmorph_plus: modmorph_plus {
     compatible = "zmk,behavior-mod-morph";
     #binding-cells = <0>;
@@ -255,70 +256,70 @@ modmorph_exclaim: modmorph_exclaim {
     compatible = "zmk,behavior-mod-morph";
     #binding-cells = <0>;
     mods = <(MOD_LSFT | MOD_RSFT)>;
-    bindings = <&kp LS(N1) &kp N1>;
+    bindings = <&kp N1 &kp LS(N1)>;
 };
 
 modmorph_lbkt: modmorph_lbkt {
     compatible = "zmk,behavior-mod-morph";
     #binding-cells = <0>;
     mods = <(MOD_LSFT | MOD_RSFT)>;
-    bindings = <&kp LBKT &kp N2>;
+    bindings = <&kp N2 &kp LBKT>;
 };
 
 modmorph_lcurl: modmorph_lcurl {
     compatible = "zmk,behavior-mod-morph";
     #binding-cells = <0>;
     mods = <(MOD_LSFT | MOD_RSFT)>;
-    bindings = <&kp LBRACE &kp N3>;
+    bindings = <&kp N3 &kp LBRACE>;
 };
 
 modmorph_lparen: modmorph_lparen {
     compatible = "zmk,behavior-mod-morph";
     #binding-cells = <0>;
     mods = <(MOD_LSFT | MOD_RSFT)>;
-    bindings = <&kp LPAR &kp N4>;
+    bindings = <&kp N4 &kp LPAR>;
 };
 
 modmorph_ampersand: modmorph_ampersand {
     compatible = "zmk,behavior-mod-morph";
     #binding-cells = <0>;
     mods = <(MOD_LSFT | MOD_RSFT)>;
-    bindings = <&kp AMPS &kp N5>;
+    bindings = <&kp N5 &kp AMPS>;
 };
 
 modmorph_equal: modmorph_equal {
     compatible = "zmk,behavior-mod-morph";
     #binding-cells = <0>;
     mods = <(MOD_LSFT | MOD_RSFT)>;
-    bindings = <&kp EQUAL &kp N6>;
+    bindings = <&kp N6 &kp EQUAL>;
 };
 
 modmorph_rparen: modmorph_rparen {
     compatible = "zmk,behavior-mod-morph";
     #binding-cells = <0>;
     mods = <(MOD_LSFT | MOD_RSFT)>;
-    bindings = <&kp RPAR &kp N7>;
+    bindings = <&kp N7 &kp RPAR>;
 };
 
 modmorph_rcurl: modmorph_rcurl {
     compatible = "zmk,behavior-mod-morph";
     #binding-cells = <0>;
     mods = <(MOD_LSFT | MOD_RSFT)>;
-    bindings = <&kp RBRACE &kp N8>;
+    bindings = <&kp N8 &kp RBRACE>;
 };
 
 modmorph_rbkt: modmorph_rbkt {
     compatible = "zmk,behavior-mod-morph";
     #binding-cells = <0>;
     mods = <(MOD_LSFT | MOD_RSFT)>;
-    bindings = <&kp RBKT &kp N9>;
+    bindings = <&kp N9 &kp RBKT>;
 };
 
 modmorph_at: modmorph_at {
     compatible = "zmk,behavior-mod-morph";
     #binding-cells = <0>;
     mods = <(MOD_LSFT | MOD_RSFT)>;
-    bindings = <&kp AT &kp N0>;
+    bindings = <&kp N0 &kp AT>;
 };
 
 /* Bottom-row: Base → $,#  Shift → *,^ */
