@@ -74,7 +74,11 @@ Follow the programming instruction on page 8 of the [Quick Start Guide](https://
 
 Local builds land in `firmware/` as `*-left-clique.uf2` and `*-right-clique.uf2`. GitHub Actions builds use the same left/right pair. Flash left, then right.
 
-Mod+macro1 and Mod+macro3 are: hold the key labeled **Mod**, then tap the inner key immediately below it. On the left that is the inner key below Keypad. On the right that is the inner key below Mod.
+Those combos use three different keys:
+
+- **Mod** is the key labeled Mod, inner-top on the right, next to 6.
+- **Macro 1** is the left inner key next to T, below Keypad. Hold Mod and tap this for the left bootloader.
+- **Macro 3** is the right inner key next to Y, the key directly below Mod. Hold Mod and tap this for the right bootloader.
 
 ### Overview
 
