@@ -76,8 +76,8 @@ Local builds land in `firmware/` as `*-left-clique.uf2` and `*-right-clique.uf2`
 
 Two flash sets are kept in the repo so you can switch layouts:
 
-- `firmware/Numbers Top/` tap 1-0, Shift for the custom symbols
-- `firmware/Symbols Top/` tap the custom symbols, Shift for 1-0
+- `firmware/Numbers Top/` numbers on the top row, custom symbols on Shift
+- `firmware/Symbols Top/` custom symbols on the top row, numbers on Shift
 
 Those combos use three different keys:
 
